@@ -2,22 +2,376 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 
     <title>reveal.js</title>
 
-    <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
-    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" id="theme">
+    <link href="node_modules/reveal.js/dist/reset.css" rel="stylesheet">
+    <link href="node_modules/reveal.js/dist/reveal.css" rel="stylesheet">
+    <link href="dist/theme/flockDark.css" id="theme" rel="stylesheet">
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+    <link href="node_modules/reveal.js/plugin/highlight/monokai.css" id="highlight-theme" rel="stylesheet">
 </head>
 <body>
 <div class="reveal">
     <div class="slides">
-        <section>Slide 1</section>
-        <section>Slide 2</section>
+        <section>A brief history of how c-facts got here</section>
+        <section>In the beginning there was nothing...
+        </section>
+        <section></section>
+        <section>And then ...
+        </section>
+        <section></section>
+        <section data-background-image="images/big-bang-theory.jpg">
+            <p class="fragment">And out of all this chaos...</p>
+            <span class="fragment"><img src="images/javascript.png" style="height: 400px"/> </span>
+        </section>
+        <section>
+            Agenda
+            <ul>
+                <li>Introduction</li>
+                <li>Crash course javascript history</li>
+                <li>Design choices</li>
+                <li>How C-facts benefits from the JS eco system</li>
+                <li>Hooks</li>
+                <li>Pitfalls</li>
+                <li>Alternatives</li>
+                <li>Future</li>
+            </ul>
+        </section>
+
+        <section><h1>Introduction</h1></section>
+        <section data-background-image="images/bg-ocean.jpg">
+            <p class="fragment">who am i</p>
+            <img class="fragment" src="images/reinier.png"/>
+        </section>
+        <section data-background-image="images/bg-ocean.jpg">
+            <p class="fragment">What about C-facts</p>
+            <ul>
+                <li class="fragment">Cloud Facts</li>
+                <li class="fragment">Collectors to collect data</li>
+                <li class="fragment">View data metrics, graphs, invoices</li>
+                <li class="fragment">Share data with customers</li>
+                <li class="fragment">Uses the Flock stack (React, Material UI, Typescript, Kotlin, postgresql)</li>
+            </ul>
+        </section>
+        <section>
+            <section>Why Javascript?</section>
+            <section>Most used / favored programming language / experience</section>
+            <section><img class="r-stretch" src="images/languages-2.png"/></section>
+            <section><img class="r-stretch" src="images/languages-8.png"/></section>
+            <section><img class="r-stretch" src="images/languages-5.png"/></section>
+            <section><img class="r-stretch" src="images/languages-7.png"/></section>
+            <section>Sources:
+                <ul>
+                    <li>https://www.northeastern.edu/graduate/blog/most-popular-programming-languages/</li>
+                    <li>
+                        https://www.computer.org/publications/tech-news/trends/programming-languages-you-should-learn-in-2020
+                    </li>
+                    <li>https://hackr.io/blog/best-programming-languages-to-learn-2020-jobs-future</li>
+                    <li>https://www.fullstackacademy.com/blog/nine-best-programming-languages-to-learn</li>
+                    <li>
+                        https://towardsdatascience.com/top-10-in-demand-programming-languages-to-learn-in-2020-4462eb7d8d3e
+                    </li>
+                    <li>https://octoverse.github.com/</li>
+                    <li>
+                        https://towardsdatascience.com/10-most-popular-programming-languages-for-2020-and-beyond-67c512eeea73
+                    </li>
+                    <li>https://www.codingdojo.com/blog/top-7-programming-languages</li>
+                    <li>https://www.simplilearn.com/best-programming-languages-start-learning-today-article</li>
+                    <li>
+                        https://www.jetbrains.com/lp/devecosystem-2020/?gclid=CjwKCAiA7939BRBMEiwA-hX5J94dKClpDmuDTX4ndVMaYuIdGUKonDHmZnWFWy_ikhh86PsSHTo4dBoCpEsQAvD_BwE&gclsrc=aw.ds
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>Fast forward to 1995 - 1997
+                <img class="r-stretch" src="images/in%20the%20beginning.jpg"/>
+            </section>
+            <section><img class="r-stretch" src="images/netscape.jpeg"/>
+                <h4>Developed for netscape as LiveScript</h4>
+            </section>
+            <section>
+                 <pre><code data-noescape data-trim>
+('b'+'a'+ + 'a' + 'a').toLowerCase() === 'banana'
+true
+                </code></pre>
+                <a href="https://triplebyte.com/blog/strange-things-javascript" style="font-size: 16px">source</a>
+            </section>
+            <section><img class="r-stretch" src="images/netscape-internetexplorer.png"/></section>
+            <section><img class="r-stretch" src="images/internetexplorer.svg"/>
+                <h4>Microsoft reverse-engineered the Navigator interpreter to create its own, called JScript</h4>
+            </section>
+            <section>
+                <img class="r-stretch" src="images/bestviewed.png"/>
+            </section>
+        </section>
+
+        <section>
+            <section>1997 - 1999 Standardization
+                <ul>
+                    <li>1997 ECMAscript 1</li>
+                    <li>1998 ECMAscript 2</li>
+                    <li>1999 ECMAscript 3</li>
+                    <li>1999 Acid Test 1, <a href="http://acid2.acidtests.org/#top">2005 Acid Test 2</a>, <a
+                            href="http://acid3.acidtests.org/">2008 Acid Test 3</a></li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>2000 - Age of DHTML</section>
+            <section>
+                <img class="r-stretch" src="images/website1.png"/>
+            </section>
+        </section>
+        <section>
+            <section>2006 WEB 2.0 jquery area</section>
+
+            <section>
+                <ul>
+                    <li>DOM manipulation library</li>
+                    <li>Multi browser support</li>
+                    <li>Simplified event handling</li>
+                    <li>Simplify HTML DOM tree traversal and manipulation</li>
+                </ul>
+            </section>
+
+            <section>
+                <p>Vanilla Javascript</p>
+                <pre><code data-noescape data-trim>
+function fadeIn(el) {
+  el.style.opacity = 0;
+
+  var last = +new Date();
+  var tick = function() {
+    el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
+    last = +new Date();
+
+    if (+el.style.opacity < 1) {
+      (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+    }
+  };
+
+  tick();
+}
+
+fadeIn(el);
+                </code></pre>
+
+                <p>Jquery</p>
+                <pre><code data-noescape data-trim>
+$(el).fadeIn();
+                </code></pre>
+            </section>
+
+
+            <section>
+                <p>Vanilla Javascript</p>
+                <pre><code data-noescape data-trim>
+if (el.classList)
+  el.classList.add(className);
+else
+  el.className += ' ' + className;
+                </code></pre>
+
+                <p>Jquery</p>
+                <pre><code data-noescape data-trim>
+$(el).addClass(className);
+                </code></pre>
+            </section>
+
+        </section>
+        <section>
+            <h2>2009 ECMAscript 5</h2>
+            <ul>
+                <li>Added "strict mode"</li>
+                <li>Added JSON support</li>
+                <li>Added String.trim()</li>
+                <li>Added Array.isArray()</li>
+                <li>Added Array iteration methods</li>
+            </ul>
+        </section>
+        <section>
+            <h2>2010 Angular</h2>
+            <ul>
+                <li>front-end web framework</li>
+                <li>single-page applications</li>
+                <li>client-side model–view–controller (MVC) and model–view–viewmodel (MVVM) architectures</li>
+                <li>MEAN (MongoDB, Express.js, AngularJS (or Angular), and Node.js)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>2013 React</h2>
+            <ul>
+                <li>front-end web framework</li>
+                <li>development of single-page or mobile applications</li>
+                <li>state management</li>
+            </ul>
+        </section>
+        <section>
+            <h2>ECMAScript 2015</h2>
+            <ul>
+                <li>Added let and const</li>
+                <li>Added default parameter values</li>
+                <li>Added Array.find()</li>
+                <li>Added Array.findIndex()</li>
+            </ul>
+        </section>
+        <section>
+            <h2>ECMAScript 2016</h2>
+            <ul>
+                <li>Added exponential operator (**)</li>
+                <li>Added Array.prototype.includes</li>
+            </ul>
+        </section>
+        <section>
+            <h2>ECMAScript 2017</h2>
+            <ul>
+                <li>Added string padding</li>
+                <li>Added Object.entries</li>
+                <li>Added Object.values</li>
+                <li>Added async functions</li>
+                <li>Added shared memory</li>
+            </ul>
+        </section>
+        <section>
+            <h2>ECMAScript 2018</h2>
+            <ul>
+                <li>Added rest / spread properties</li>
+                <li>Added asynchronous iteration</li>
+                <li>Added Promise.finally()</li>
+                <li>Additions to RegExp</li>
+            </ul>
+        </section>
+        <section>
+            <p class="fragment">Design choices frontend</p>
+            <ul>
+                <li class="fragment">Easy to develop</li>
+                <li class="fragment">Experience from te developers</li>
+                <li class="fragment">Optimized mobile</li>
+            </ul>
+        </section>
+        <section>
+            <p class="fragment">Design choices backend</p>
+            <ul>
+                <li class="fragment">Kotlin</li>
+                <li class="fragment">Postgresql</li>
+            </ul>
+        </section>
+
+        <section>How C-facts benefits from the JS eco system</section>
+        <section>
+            <h2>React</h2>
+            <img class="r-stretch" src="images/react-logo.svg"/>
+            <ul>
+                <li>Light weight</li>
+                <li>Ready to use components</li>
+                <li>Typescript</li>
+                <li>React Hooks</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Babel</h2>
+            <img class="r-stretch" src="images/babel-logo.svg"/>
+            <ul>
+                <li>Convert to legacy browsers</li>
+            </ul>
+        </section>
+        <section>
+            <h2>React Components</h2>
+            <ul>
+                <li>Testabillaty Input > Output (pure functions)</li>
+                <li>Easier to read/write</li>
+                <li>Easier to debug</li>
+            </ul>
+        </section>
+        <section>
+            <p>Example</p>
+            <pre><code>
+interface FormTitleFieldProps {
+  hidden?: boolean;
+  text: string;
+}
+
+export function FormTitleField({ hidden = false, text }: FormTitleFieldProps) {
+  return (
+    <Typography hidden={hidden} variant="h6">
+      {text}
+    </Typography>
+  );
+}
+                </code></pre>
+        </section>
+        <section>
+            <h2>React Hooks</h2>
+            <ul>
+                <li>Allow you to use local state and other React features without writing a class</li>
+                <li>“hook onto” React state and lifecycle features</li>
+            </ul>
+            <p>2 rules</p>
+            <ul>
+                <li>Only call hooks at the top level—do not nest your hooks in any logic.</li>
+                <li>Only call hooks from React functions or custom hooks.</li>
+            </ul>
+        </section>
+        <section>
+            <p>Example</p>
+            <pre><code>
+export const useRedirect = () => {
+  const history = useHistory();
+  const location = useLocation();
+
+  return (url: string) =>
+    history.push({ pathname: url, search: location.search });
+};
+
+
+
+export function SomePage() {
+  const redirect = useRedirect();
+
+  const handleClick = () => redirect(`/logout`);
+
+  return (<Button onClick={handleClick}/>Log out</Button>);
+}
+                </code></pre>
+        </section>
+
+
+        <section>
+            <p>Structure</p>
+            <section>
+                <p>Application</p>
+                <img src="images/frontend-app.png">
+            </section>
+            <section>
+                <p>Page</p>
+                <img src="images/frontend-page.png">
+            </section>
+            <section>
+                <p>Components</p>
+                <img src="images/frontend-components.png">
+            </section>
+            <section>
+                <p>Components components</p>
+                <img src="images/frontend-components-components.png">
+            </section>
+            <section>
+                <p>Hooks</p>
+                <img src="images/frontend-hooks.png">
+            </section>
+        </section>
+
+        <section>(Ch/J)err(y/e) on the cake Graphql (Jerre Simple bindings)</section>
+        <section>
+            <h2>Jump to code!</h2>
+        </section>
+        <section>
+            <h2>Summary....</h2>
+        </section>
     </div>
 </div>
 
@@ -26,15 +380,15 @@
 <script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
 <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
 <script>
-    // More info about initialization & config:
-    // - https://revealjs.com/initialization/
-    // - https://revealjs.com/config/
-    Reveal.initialize({
-        hash: true,
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+  Reveal.initialize({
+    hash: true,
 
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-    });
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+  });
 </script>
 </body>
 </html>
